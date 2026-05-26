@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帛琉五天四夜潛旅行程 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ocean-deep: #0a3d5c;
+    --ocean-mid: #0e6b8f;
+    --ocean-bright: #1a9cbf;
+    --ocean-light: #4dc8e8;
+    --teal: #0d9488;
+    --teal-light: #5eead4;
+    --sand: #fdf6e3;
+    --sand-dark: #f5e6c8;
+    --coral: #f97316;
+    --coral-light: #fed7aa;
+    --white: #ffffff;
+    --text-dark: #0f2d3d;
+    --text-mid: #2d6a87;
+    --text-light: #64a6c0;
+    --green-dive: #065f46;
+    --green-light: #d1fae5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: var(--sand);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, var(--ocean-deep) 0%, var(--ocean-mid) 50%, var(--ocean-bright) 100%);
+    padding: 80px 24px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0; right: 0;
+    height: 60px;
+    background: var(--sand);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+
+  .hero-wave {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.06;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 20px,
+      rgba(255,255,255,0.5) 20px,
+      rgba(255,255,255,0.5) 22px
+    );
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: var(--teal-light);
+    font-size: 13px;
+    letter-spacing: 3px;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    color: white;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 32px;
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero-chip {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* CONTAINER */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.6rem;
+    color: var(--ocean-deep);
+    font-weight: 700;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, var(--ocean-light), transparent);
+    border-radius: 2px;
+  }
+
+  /* DAY CARDS */
+  .days-section {
+    padding: 60px 0 40px;
+  }
+
+  .day-card {
+    background: white;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(10,61,92,0.08);
+    animation: fadeUp 0.6s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .day-card:nth-child(1) { animation-delay: 0.05s; }
+  .day-card:nth-child(2) { animation-delay: 0.15s; }
+  .day-card:nth-child(3) { animation-delay: 0.25s; }
+  .day-card:nth-child(4) { animation-delay: 0.35s; }
+  .day-card:nth-child(5) { animation-delay: 0.45s; }
+
+  .day-header {
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .day-header.blue { background: linear-gradient(135deg, var(--ocean-deep), var(--ocean-mid)); }
+  .day-header.teal { background: linear-gradient(135deg, #065f46, var(--teal)); }
+  .day-header.coral { background: linear-gradient(135deg, #92400e, var(--coral)); }
+
+  .day-num {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    white-space: nowrap;
+  }
+
+  .day-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 700;
+  }
+
+  .day-date {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 2px;
+  }
+
+  .day-icon {
+    margin-left: auto;
+    font-size: 2rem;
+    opacity: 0.8;
+  }
+
+  .day-body {
+    padding: 24px 28px;
+  }
+
+  /* SCHEDULE TABLE */
+  .schedule {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .schedule tr {
+    border-bottom: 1px solid #f0f4f8;
+  }
+
+  .schedule tr:last-child { border-bottom: none; }
+
+  .schedule td {
+    padding: 10px 8px;
+    vertical-align: top;
+  }
+
+  .schedule td:first-child {
+    color: var(--ocean-bright);
+    font-weight: 700;
+    white-space: nowrap;
+    width: 70px;
+    font-size: 13px;
+  }
+
+  .schedule td:last-child {
+    color: var(--text-dark);
+    line-height: 1.5;
+  }
+
+  .tag-included {
+    display: inline-block;
+    background: var(--green-light);
+    color: var(--green-dive);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+    font-weight: 500;
+  }
+
+  /* DIVE SPOTS */
+  .dive-spots {
+    background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+  }
+
+  .dive-spots-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .dive-spot-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+
+  .dive-spot-item:last-child { margin-bottom: 0; }
+
+  .spot-name {
+    font-weight: 700;
+    color: var(--ocean-deep);
+    min-width: 160px;
+  }
+
+  .spot-detail {
+    color: #4a7080;
+    line-height: 1.4;
+  }
+
+  /* SNORKEL SPOTS */
+  .snorkel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .snorkel-item {
+    background: linear-gradient(135deg, #fff8e1, #fff3cd);
+    border: 1px solid #fde68a;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .snorkel-emoji { font-size: 1.4rem; margin-bottom: 4px; }
+
+  .snorkel-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #92400e;
+    margin-bottom: 2px;
+  }
+
+  .snorkel-desc {
+    font-size: 11px;
+    color: #b45309;
+  }
+
+  /* NOTICES */
+  .notices {
+    background: #fff8f0;
+    border-left: 3px solid var(--coral);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 16px;
+    margin-top: 4px;
+  }
+
+  .notices-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--coral);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .notices ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .notices ul li {
+    font-size: 13px;
+    color: #7c3a1a;
+    padding: 3px 0;
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .notices ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--coral);
+    font-size: 11px;
+    top: 4px;
+  }
+
+  /* FLIGHT INFO */
+  .flight-bar {
+    background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .flight-code {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ocean-deep);
+  }
+
+  .flight-route {
+    font-size: 13px;
+    color: var(--text-mid);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .flight-arrow {
+    color: var(--ocean-bright);
+    font-size: 18px;
+  }
+
+  .flight-time {
+    margin-left: auto;
+    text-align: right;
+  }
+
+  .flight-time strong {
+    display: block;
+    font-size: 14px;
+    color: var(--ocean-deep);
+  }
+
+  .flight-time span {
+    font-size: 12px;
+    color: var(--text-light);
+  }
+
+  /* HOTEL SECTION */
+  .hotel-section {
+    padding: 20px 0 40px;
+  }
+
+  .hotel-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(10,61,92,0.08);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .hotel-banner {
+    background: linear-gradient(135deg, var(--ocean-deep), var(--teal));
+    padding: 32px 28px;
+    flex: 1;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hotel-banner h3 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .hotel-banner p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 16px;
+  }
+
+  .hotel-link {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: background 0.2s;
+    width: fit-content;
+  }
+
+  .hotel-link:hover { background: rgba(255,255,255,0.25); }
+
+  .hotel-details {
+    padding: 28px;
+    flex: 2;
+    min-width: 260px;
+  }
+
+  .hotel-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f4f8;
+    font-size: 14px;
+  }
+
+  .hotel-row:last-child { border-bottom: none; }
+  .hotel-row span:first-child { color: var(--text-light); }
+  .hotel-row span:last-child { font-weight: 600; color: var(--text-dark); }
+
+  /* COST SECTION */
+  .cost-section {
+    padding: 20px 0 40px;
+  }
+
+  .cost-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .cost-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(10,61,92,0.07);
+  }
+
+  .cost-card-title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid;
+  }
+
+  .cost-card.prepaid .cost-card-title {
+    color: var(--teal);
+    border-color: var(--teal-light);
+  }
+
+  .cost-card.onsite .cost-card-title {
+    color: var(--ocean-mid);
+    border-color: var(--ocean-light);
+  }
+
+  .cost-card.extra .cost-card-title {
+    color: #92400e;
+    border-color: #fde68a;
+  }
+
+  .cost-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 13px;
+    border-bottom: 1px solid #f5f8fa;
+  }
+
+  .cost-row:last-child { border-bottom: none; }
+
+  .cost-label { color: #4a6070; }
+  .cost-sub { font-size: 11px; color: #8aa0b0; display: block; margin-top: 2px; }
+
+  .cost-amount {
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .cost-card.prepaid .cost-amount { color: var(--teal); }
+  .cost-card.onsite .cost-amount { color: var(--ocean-mid); }
+  .cost-card.extra .cost-amount { color: #92400e; }
+
+  .cost-total {
+    background: linear-gradient(135deg, var(--ocean-deep), var(--ocean-mid));
+    border-radius: 16px;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .cost-total-label {
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+  }
+
+  .cost-total-amount {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 2rem;
+    color: white;
+    font-weight: 700;
+  }
+
+  .cost-total-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* BANK */
+  .bank-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px 28px;
+    box-shadow: 0 4px 20px rgba(10,61,92,0.07);
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .bank-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #22d3ee, #06b6d4);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .bank-info h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ocean-deep);
+    margin-bottom: 4px;
+  }
+
+  .bank-info p {
+    font-size: 13px;
+    color: var(--text-light);
+  }
+
+  .bank-amount {
+    margin-left: auto;
+    text-align: right;
+  }
+
+  .bank-amount strong {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--ocean-deep);
+  }
+
+  .bank-amount span {
+    font-size: 12px;
+    color: var(--text-light);
+  }
+
+  /* TIPS SECTION */
+  .tips-section {
+    padding: 20px 0 60px;
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .tip-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(10,61,92,0.07);
+  }
+
+  .tip-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .tip-emoji {
+    font-size: 1.4rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+  }
+
+  .tip-emoji.blue { background: #e0f2fe; }
+  .tip-emoji.teal { background: #d1fae5; }
+  .tip-emoji.yellow { background: #fef3c7; }
+  .tip-emoji.orange { background: #fff7ed; }
+  .tip-emoji.green { background: #ecfdf5; }
+  .tip-emoji.pink { background: #fdf2f8; }
+
+  .tip-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ocean-deep);
+  }
+
+  .tip-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .tip-card ul li {
+    font-size: 13px;
+    color: #4a6070;
+    padding: 4px 0;
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.5;
+    border-bottom: 1px solid #f5f8fa;
+  }
+
+  .tip-card ul li:last-child { border-bottom: none; }
+
+  .tip-card ul li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: var(--ocean-bright);
+    font-size: 16px;
+    top: 1px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ocean-deep);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 32px 20px;
+    font-size: 13px;
+  }
+
+  footer strong { color: white; }
+
+  /* DIVIDER */
+  .wave-divider {
+    height: 40px;
+    background: white;
+    clip-path: ellipse(55% 100% at 50% 0%);
+    margin-bottom: -2px;
+  }
+
+  .section-bg-white { background: white; }
+  .section-bg-sand { background: var(--sand); }
+
+  @media (max-width: 600px) {
+    .day-header { padding: 16px 18px; }
+    .day-body { padding: 18px; }
+    .dive-spot-item { flex-direction: column; gap: 2px; }
+    .spot-name { min-width: unset; }
+    .hotel-card { flex-direction: column; }
+    .cost-total { flex-direction: column; text-align: center; }
+    .bank-card { flex-direction: column; }
+    .bank-amount { margin-left: 0; text-align: left; }
+    .schedule td:first-child { width: 60px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-wave"></div>
+  <div class="container">
+    <div class="hero-badge">🌊 2026 潛旅行程</div>
+    <h1>帛琉五天四夜<br>潛旅之旅</h1>
+    <p class="hero-sub">LT Dive Palau × Thalassa × IPRC Palau</p>
+    <div class="hero-meta">
+      <div class="hero-chip">📅 6月18日 ─ 6月22日</div>
+      <div class="hero-chip">🛫 CI30 / CI29 中華航空</div>
+      <div class="hero-chip">🏨 IPRC Palau 4晚</div>
+      <div class="hero-chip">🤿 AOW 考照</div>
+    </div>
+  </div>
+</div>
+
+<!-- DAY CARDS -->
+<div class="section-bg-sand">
+  <div class="container">
+    <div class="days-section">
+      <h2 class="section-title">📋 每日行程</h2>
+
+      <!-- DAY 1 -->
+      <div class="day-card">
+        <div class="day-header blue">
+          <div>
+            <div class="day-num">Day 1</div>
+            <div class="day-title">抵達帛琉</div>
+            <div class="day-date">6月18日（四）</div>
+          </div>
+          <div class="day-icon">✈️</div>
+        </div>
+        <div class="day-body">
+          <div class="flight-bar">
+            <div class="flight-code">CI30</div>
+            <div class="flight-route">
+              <span>桃園 T1</span>
+              <span class="flight-arrow">→</span>
+              <span>帛琉 ROR</span>
+            </div>
+            <div class="flight-time">
+              <strong>09:40 → 14:35</strong>
+              <span>中華航空 A321 NEO</span>
+            </div>
+          </div>
+          <table class="schedule">
+            <tr><td>14:35</td><td>抵達帛琉機場（ROR）</td></tr>
+            <tr><td>15:00</td><td>LT Dive 機場接送至飯店（車程約30分鐘）</td></tr>
+            <tr><td>15:30</td><td>IPRC Palau Check-in</td></tr>
+            <tr><td>16:00</td><td>休息、整理裝備、填寫 LT Dive 資料表</td></tr>
+            <tr><td>19:00</td><td>晚餐（自理）</td></tr>
+          </table>
+          <div class="notices">
+            <div class="notices-title">⚠️ 注意事項</div>
+            <ul>
+              <li>入境前72小時需至 palautravel.pw 填寫入境表格，取得入境 QR Code</li>
+              <li>入境時須提供入境 QR Code + 回程機票憑證（電子版即可）</li>
+              <li>機場內無找換店，請事先備好美金現金</li>
+              <li>入境限帶：19支香煙、2公升酒精</li>
+              <li>時區較台灣快1小時（UTC+9）</li>
+              <li>抵達後建議盡快購買當地 SIM 卡（PNCC 或 PT WAVE）</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 2 -->
+      <div class="day-card">
+        <div class="day-header teal">
+          <div>
+            <div class="day-num">Day 2</div>
+            <div class="day-title">AOW 課程 Day 1</div>
+            <div class="day-date">6月19日（五）｜LT Dive Palau</div>
+          </div>
+          <div class="day-icon">🤿</div>
+        </div>
+        <div class="day-body">
+          <table class="schedule">
+            <tr><td>07:00</td><td>飯店早餐 <span class="tag-included">含</span>（不要吃太飽）</td></tr>
+            <tr><td>08:30</td><td>LT Dive 接駁上船</td></tr>
+            <tr><td>09:30</td><td>第一潛：藍洞 Blue Holes（深潛科目）</td></tr>
+            <tr><td>11:15</td><td>第二潛：大斷層 Big Drop-off（多層次電腦錶科目）</td></tr>
+            <tr><td>12:00</td><td>午餐 <span class="tag-included">含</span></td></tr>
+            <tr><td>14:00</td><td>第三潛：玻璃城 Glass City（導航科目）</td></tr>
+            <tr><td>15:00</td><td>回程，飯店梳洗休息</td></tr>
+            <tr><td>19:00</td><td>晚餐（自理）</td></tr>
+          </table>
+          <div class="dive-spots">
+            <div class="dive-spots-title">🐟 潛點介紹</div>
+            <div class="dive-spot-item">
+              <div class="spot-name">🔵 藍洞 Blue Holes</div>
+              <div class="spot-detail">流況弱｜最大深度 30M｜天使曙光、心型洞、閃電貝</div>
+            </div>
+            <div class="dive-spot-item">
+              <div class="spot-name">🪸 大斷層 Big Drop-off</div>
+              <div class="spot-detail">流況弱至中｜最大深度 20M｜巨型海扇、七彩珊瑚、玳瑁海龜</div>
+            </div>
+            <div class="dive-spot-item">
+              <div class="spot-name">🐟 玻璃城 Glass City</div>
+              <div class="spot-detail">流況弱至中｜最大深度 30M｜魟魚清潔站、杰克魚群</div>
+            </div>
+          </div>
+          <div class="notices">
+            <div class="notices-title">⚠️ 注意事項</div>
+            <ul>
+              <li>請攜帶：電腦錶、浮力袋（SMB）、手電筒</li>
+              <li>禁止攜帶手套（帛琉政府規定）</li>
+              <li>潛水前8小時勿飲酒</li>
+              <li>使用珊瑚友善／物理性防曬，違規罰款 $1,000 USD</li>
+              <li>暈船藥（小白兔）當天早上提早服用，早餐不要吃太飽</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 3 -->
+      <div class="day-card">
+        <div class="day-header teal">
+          <div>
+            <div class="day-num">Day 3</div>
+            <div class="day-title">AOW 課程 Day 2</div>
+            <div class="day-date">6月20日（六）｜LT Dive Palau</div>
+          </div>
+          <div class="day-icon">🤿</div>
+        </div>
+        <div class="day-body">
+          <table class="schedule">
+            <tr><td>07:00</td><td>飯店早餐 <span class="tag-included">含</span>（不要吃太飽）</td></tr>
+            <tr><td>08:30</td><td>LT Dive 接駁上船</td></tr>
+            <tr><td>09:30</td><td>第四潛：烏龍水道 Ulong Channel（放流科目）</td></tr>
+            <tr><td>11:15</td><td>第五潛：德國水道 German Channel（頂尖浮力科目）</td></tr>
+            <tr><td>12:00</td><td>午餐 <span class="tag-included">含</span></td></tr>
+            <tr><td>13:30</td><td>AOW 考核完成 🎉</td></tr>
+            <tr><td>15:00</td><td>回程，飯店休息</td></tr>
+            <tr><td>19:00</td><td>晚餐（自理）</td></tr>
+          </table>
+          <div class="dive-spots">
+            <div class="dive-spots-title">🐟 潛點介紹</div>
+            <div class="dive-spot-item">
+              <div class="spot-name">🌀 烏龍水道 Ulong Channel</div>
+              <div class="spot-detail">強流放流｜最大深度 20M｜玫瑰珊瑚牆、鯊魚群、杰克魚風暴</div>
+            </div>
+            <div class="dive-spot-item">
+              <div class="spot-name">🦈 德國水道 German Channel</div>
+              <div class="spot-detail">流況弱至中｜最大深度 25M｜魟魚清潔站、土魟、白鰭礁鯊</div>
+            </div>
+          </div>
+          <div class="notices">
+            <div class="notices-title">⚠️ 注意事項</div>
+            <ul>
+              <li>放流潛需備好流鉤</li>
+              <li>AOW 完成後正式成為進階潛水員 🎓</li>
+              <li>持高氧證可免費升級高氧氣瓶</li>
+              <li>暈船藥（小白兔）當天早上提早服用，早餐不要吃太飽</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 4 -->
+      <div class="day-card">
+        <div class="day-header coral">
+          <div>
+            <div class="day-num">Day 4</div>
+            <div class="day-title">東線浮潛</div>
+            <div class="day-date">6月21日（日）｜LT Dive Palau</div>
+          </div>
+          <div class="day-icon">🐠</div>
+        </div>
+        <div class="day-body">
+          <table class="schedule">
+            <tr><td>07:00</td><td>飯店早餐 <span class="tag-included">含</span>（不要吃太飽）</td></tr>
+            <tr><td>08:30</td><td>LT Dive 接駁上船</td></tr>
+            <tr><td>09:30</td><td>牛奶湖 Milky Way｜天然火山石灰泥 SPA</td></tr>
+            <tr><td>10:30</td><td>鯊魚城 Shark City｜與鯊魚共遊</td></tr>
+            <tr><td>11:30</td><td>千貝城 Giant Clam City｜百年硬碟貝</td></tr>
+            <tr><td>12:00</td><td>午餐 <span class="tag-included">含</span></td></tr>
+            <tr><td>13:30</td><td>七彩魚世界 Rainbow Reef｜熱帶魚群</td></tr>
+            <tr><td>14:30</td><td>美人魚水道 Mermaid Channel｜藍色鹿角珊瑚</td></tr>
+            <tr><td>16:00</td><td>回程飯店</td></tr>
+            <tr><td>19:00</td><td>晚餐（自理）</td></tr>
+          </table>
+          <div class="snorkel-grid">
+            <div class="snorkel-item">
+              <div class="snorkel-emoji">🥛</div>
+              <div class="snorkel-name">牛奶湖</div>
+              <div class="snorkel-desc">天然石灰泥 SPA</div>
+            </div>
+            <div class="snorkel-item">
+              <div class="snorkel-emoji">🦈</div>
+              <div class="snorkel-name">鯊魚城</div>
+              <div class="snorkel-desc">與鯊魚共遊</div>
+            </div>
+            <div class="snorkel-item">
+              <div class="snorkel-emoji">🐚</div>
+              <div class="snorkel-name">千貝城</div>
+              <div class="snorkel-desc">百年硬碟貝</div>
+            </div>
+            <div class="snorkel-item">
+              <div class="snorkel-emoji">🐠</div>
+              <div class="snorkel-name">七彩魚世界</div>
+              <div class="snorkel-desc">熱帶魚群</div>
+            </div>
+            <div class="snorkel-item">
+              <div class="snorkel-emoji">🪸</div>
+              <div class="snorkel-name">美人魚水道</div>
+              <div class="snorkel-desc">藍色鹿角珊瑚</div>
+            </div>
+          </div>
+          <div class="notices">
+            <div class="notices-title">⚠️ 注意事項</div>
+            <ul>
+              <li>請自備水母衣（防曬用）</li>
+              <li>浮潛含：面鏡、呼吸管、救生衣、午餐、飲水</li>
+              <li>出海稅洛克群島 $50 USD／人（需自付）</li>
+              <li>出海小費 $15 USD／人（需自付）</li>
+              <li>禁止觸碰珊瑚及任何海洋生物</li>
+              <li>暈船藥（小白兔）當天早上提早服用，早餐不要吃太飽</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 5 -->
+      <div class="day-card">
+        <div class="day-header blue">
+          <div>
+            <div class="day-num">Day 5</div>
+            <div class="day-title">輕航機觀光 + 返台</div>
+            <div class="day-date">6月22日（一）｜Thalassa</div>
+          </div>
+          <div class="day-icon">🛩️</div>
+        </div>
+        <div class="day-body">
+          <table class="schedule">
+            <tr><td>07:00</td><td>飯店早餐 <span class="tag-included">含</span></td></tr>
+            <tr><td>10:00</td><td>Thalassa 輕航機 C 方案出發（55分鐘）</td></tr>
+            <tr><td>10:00–11:00</td><td>俯瞰：牛奶湖 → 水母湖 → 長灘 → 德國水道 → 佩里琉群島 → 藍角 → 七十群島 → 海豚區 → 科羅市區</td></tr>
+            <tr><td>11:00</td><td>IPRC Palau Check-out（行李可寄放）</td></tr>
+            <tr><td>12:00</td><td>午餐（自理）</td></tr>
+            <tr><td>15:30</td><td>接駁至機場</td></tr>
+            <tr><td>15:35</td><td>帛琉機場出發（CI29 中華航空 A321 NEO）</td></tr>
+            <tr><td>18:35</td><td>抵達桃園國際機場 T1 🏠</td></tr>
+          </table>
+          <div class="flight-bar" style="background: linear-gradient(135deg,#e0f2fe,#bae6fd); margin-top:4px;">
+            <div class="flight-code">CI29</div>
+            <div class="flight-route">
+              <span>帛琉 ROR</span>
+              <span class="flight-arrow">→</span>
+              <span>桃園 T1</span>
+            </div>
+            <div class="flight-time">
+              <strong>15:35 → 18:35</strong>
+              <span>中華航空 A321 NEO</span>
+            </div>
+          </div>
+          <div class="notices" style="margin-top:12px;">
+            <div class="notices-title">⚠️ 注意事項</div>
+            <ul>
+              <li>最後一天不安排潛水（重覆潛水後18小時內禁止搭機）</li>
+              <li>輕航機潛水後18小時內可參加，不受影響</li>
+              <li>退房時間 11:00，行李可寄放飯店至出發前</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- HOTEL -->
+<div class="section-bg-white">
+  <div class="container">
+    <div class="hotel-section">
+      <h2 class="section-title">🏨 住宿資訊</h2>
+      <div class="hotel-card">
+        <div class="hotel-banner">
+          <h3>天堂島度假村</h3>
+          <p>IPRC Palau</p>
+          <a href="https://www.iprcpalau.com" target="_blank" class="hotel-link">🔗 官網連結</a>
+        </div>
+        <div class="hotel-details">
+          <div class="hotel-row"><span>入住日期</span><span>6月18日（四）15:00</span></div>
+          <div class="hotel-row"><span>退房日期</span><span>6月22日（一）11:00</span></div>
+          <div class="hotel-row"><span>住宿晚數</span><span>4晚</span></div>
+          <div class="hotel-row"><span>早餐</span><span>每日含早餐 ✅</span></div>
+          <div class="hotel-row"><span>行李寄放</span><span>退房後可寄放至出發前 ✅</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COST -->
+<div class="section-bg-sand">
+  <div class="container">
+    <div class="cost-section">
+      <h2 class="section-title">💰 費用明細</h2>
+
+      <div class="cost-grid">
+        <div class="cost-card prepaid">
+          <div class="cost-card-title">已預付</div>
+          <div class="cost-row">
+            <div class="cost-label">AOW + 浮潛訂金<span class="cost-sub">LT Dive</span></div>
+            <div class="cost-amount">$508</div>
+          </div>
+        </div>
+
+        <div class="cost-card onsite">
+          <div class="cost-card-title">現場需付</div>
+          <div class="cost-row">
+            <div class="cost-label">AOW + 浮潛尾款<span class="cost-sub">LT Dive</span></div>
+            <div class="cost-amount">$508</div>
+          </div>
+          <div class="cost-row">
+            <div class="cost-label">機場接送<span class="cost-sub">LT Dive</span></div>
+            <div class="cost-amount">$20</div>
+          </div>
+          <div class="cost-row">
+            <div class="cost-label">輕航機 C 方案<span class="cost-sub">Thalassa（55分鐘）</span></div>
+            <div class="cost-amount">$290</div>
+          </div>
+        </div>
+
+        <div class="cost-card extra">
+          <div class="cost-card-title">額外自費（估算）</div>
+          <div class="cost-row">
+            <div class="cost-label">出海稅（洛克群島）<span class="cost-sub">Day 2–4</span></div>
+            <div class="cost-amount">$50</div>
+          </div>
+          <div class="cost-row">
+            <div class="cost-label">出海小費<span class="cost-sub">$15 × 3天</span></div>
+            <div class="cost-amount">$45</div>
+          </div>
+          <div class="cost-row">
+            <div class="cost-label">餐費（晚餐）<span class="cost-sub">自估</span></div>
+            <div class="cost-amount">—</div>
+          </div>
+          <div class="cost-row">
+            <div class="cost-label">個人裝備租借<span class="cost-sub">依需求</span></div>
+            <div class="cost-amount">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cost-total">
+        <div>
+          <div class="cost-total-label">現場總付合計（每人）</div>
+          <div class="cost-total-sub">$508 + $20 + $290 = $818 USD</div>
+        </div>
+        <div class="cost-total-amount">$818 USD</div>
+      </div>
+
+      <div class="bank-card">
+        <div class="bank-icon">🏦</div>
+        <div class="bank-info">
+          <h4>匯款給葉融</h4>
+          <p>國泰世華銀行（013）｜帳號：103501153972</p>
+        </div>
+        <div class="bank-amount">
+          <strong>TWD 33,020</strong>
+          <span>2人訂金合計</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- TIPS -->
+<div class="section-bg-white">
+  <div class="container">
+    <div class="tips-section">
+      <h2 class="section-title">📋 整體注意事項</h2>
+      <div class="tips-grid">
+
+        <div class="tip-card">
+          <div class="tip-header">
+            <div class="tip-emoji blue">💳</div>
+            <div class="tip-title">付款方式</div>
+          </div>
+          <ul>
+            <li>現場可付美金現金或信用卡</li>
+            <li>刷卡需額外加收 3% 手續費</li>
+            <li>建議備好美金現金較划算</li>
+          </ul>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-header">
+            <div class="tip-emoji yellow">☀️</div>
+            <div class="tip-title">防曬規定</div>
+          </div>
+          <ul>
+            <li>禁止使用化學防曬乳，違規罰款 $1,000 USD</li>
+            <li>請使用物理性／珊瑚友善防曬</li>
+            <li>浮潛請自備水母衣（防曬用）</li>
+          </ul>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-header">
+            <div class="tip-emoji orange">🚢</div>
+            <div class="tip-title">暈船準備</div>
+          </div>
+          <ul>
+            <li>請自備暈船藥（小白兔）</li>
+            <li>當天早上提早服用</li>
+            <li>早餐不要吃太飽，以免暈船</li>
+          </ul>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-header">
+            <div class="tip-emoji teal">🌤️</div>
+            <div class="tip-title">6月天氣</div>
+          </div>
+          <ul>
+            <li>氣溫約 28°C，水溫 28–30°C</li>
+            <li>雨季，偶有陣雨，通常不影響出海</li>
+            <li>建議攜帶 2–3mm 防寒衣</li>
+          </ul>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-header">
+            <div class="tip-emoji green">🌊</div>
+            <div class="tip-title">海洋規範</div>
+          </div>
+          <ul>
+            <li>禁止追逐、觸碰、餵食任何海洋生物</li>
+            <li>禁止攜帶手套出海（帛琉政府規定）</li>
+            <li>潛水前8小時勿飲酒</li>
+          </ul>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-header">
+            <div class="tip-emoji pink">📱</div>
+            <div class="tip-title">通訊／SIM卡</div>
+          </div>
+          <ul>
+            <li>電信商：PNCC 或 PT WAVE</li>
+            <li>SIM卡約 $25 USD（6天）／$30 USD（8天）</li>
+            <li>帛琉無 Uber、Grab，叫車需打電話</li>
+            <li>餐廳提供市區免費接送，需電話預約</li>
+            <li>出海時幾乎無訊號，屬正常現象</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>🌊 帛琉五天四夜潛旅 2026</strong><br><br>
+  LT Dive Palau &nbsp;|&nbsp; Thalassa &nbsp;|&nbsp; IPRC Palau<br>
+  6月18日 – 6月22日
+</footer>
+
+</body>
+</html>
