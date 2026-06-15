@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帛琉五天四夜 · 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --deep: #023E8A;
+  --ocean: #0077B6;
+  --mid: #00B4D8;
+  --light: #90E0EF;
+  --foam: #CAF0F8;
+  --coral: #F4845F;
+  --coral-dark: #E05C34;
+  --sand: #FFF8F0;
+  --text: #1a2e3b;
+  --text-muted: #4a6070;
+  --white: #ffffff;
+  --card-shadow: 0 8px 32px rgba(0,119,182,0.12);
+  --radius: 18px;
+  --radius-sm: 10px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: var(--text);
+  background: var(--sand);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: rgba(2,62,138,0.95);
+  backdrop-filter: blur(12px);
+  padding: 0 1rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px;
+  border-bottom: 1px solid rgba(144,224,239,0.2);
+}
+.nav-brand {
+  font-family: 'Playfair Display', serif;
+  color: var(--foam);
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.nav-links {
+  display: flex; gap: 4px; overflow-x: auto; padding: 4px 0;
+  scrollbar-width: none;
+}
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links a {
+  color: var(--light);
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 5px 9px;
+  border-radius: 20px;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+  letter-spacing: 0.3px;
+}
+.nav-links a:hover {
+  background: rgba(144,224,239,0.2);
+  color: var(--white);
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(160deg, var(--deep) 0%, var(--ocean) 45%, var(--mid) 100%);
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  padding: 80px 2rem 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(0,180,216,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(144,224,239,0.15) 0%, transparent 50%);
+}
+.hero-bubbles {
+  position: absolute; inset: 0; overflow: hidden; pointer-events: none;
+}
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(144,224,239,0.08);
+  animation: float linear infinite;
+}
+@keyframes float {
+  from { transform: translateY(110vh) scale(0.8); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.6; }
+  to { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+}
+.hero-content { position: relative; z-index: 1; max-width: 600px; }
+.hero-badge {
+  display: inline-block;
+  background: rgba(144,224,239,0.15);
+  border: 1px solid rgba(144,224,239,0.4);
+  color: var(--foam);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 30px;
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 8vw, 4.5rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+.hero-sub {
+  font-size: clamp(1rem, 3vw, 1.35rem);
+  color: var(--light);
+  margin-bottom: 2rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.hero-meta {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.hero-chip {
+  background: rgba(255,255,255,0.12);
+  color: var(--foam);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.hero-stats {
+  display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;
+}
+.stat { text-align: center; }
+.stat-num {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.72rem;
+  color: var(--light);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ── WAVE DIVIDER ── */
+.wave-divider { display: block; line-height: 0; overflow: hidden; }
+.wave-divider svg { display: block; width: 100%; }
+
+/* ── SECTIONS ── */
+section { padding: 5rem 1.5rem; }
+.section-header { text-align: center; margin-bottom: 3rem; }
+.section-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--ocean), var(--mid));
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--deep);
+  line-height: 1.2;
+}
+.section-title span { color: var(--ocean); }
+
+/* ── DAYS SECTION ── */
+#itinerary { background: var(--sand); }
+.days-container { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+
+/* Day card */
+.day-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s;
+}
+.day-card.visible { opacity: 1; transform: translateY(0); }
+.day-card:hover { box-shadow: 0 16px 48px rgba(0,119,182,0.18); }
+
+.day-header {
+  background: linear-gradient(135deg, var(--ocean) 0%, var(--mid) 100%);
+  padding: 1.25rem 1.5rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+.day-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.25);
+  line-height: 1;
+  min-width: 50px;
+}
+.day-info { flex: 1; }
+.day-date {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.day-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--white);
+  font-weight: 600;
+}
+.day-emoji { font-size: 2rem; }
+
+/* Timeline inside card */
+.day-body { padding: 1.25rem 1.5rem; }
+.timeline { list-style: none; position: relative; padding-left: 1.5rem; }
+.timeline::before {
+  content: '';
+  position: absolute; left: 6px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--mid), var(--foam));
+  border-radius: 2px;
+}
+.timeline-item {
+  position: relative; margin-bottom: 1rem; padding-left: 0.5rem;
+}
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-item::before {
+  content: '';
+  position: absolute; left: -1.2rem; top: 5px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--mid);
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 2px var(--light);
+}
+.timeline-time {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ocean);
+  letter-spacing: 0.5px;
+  margin-bottom: 1px;
+}
+.timeline-activity {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1px;
+}
+.timeline-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.dive-sites {
+  background: linear-gradient(135deg, #f0fbff, var(--foam));
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  border-left: 3px solid var(--mid);
+}
+.dive-sites-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--ocean);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+}
+.dive-sites-list {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.warning-box {
+  background: #fff8f0;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  border-left: 3px solid var(--coral);
+  font-size: 0.8rem;
+  color: var(--coral-dark);
+  font-weight: 600;
+}
+
+/* ── LODGING STRIP ── */
+.lodging-strip {
+  background: linear-gradient(135deg, var(--deep), var(--ocean));
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  margin-top: 1.25rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+.lodging-icon { font-size: 1.8rem; }
+.lodging-info { flex: 1; }
+.lodging-name {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+.lodging-desc {
+  color: var(--light);
+  font-size: 0.75rem;
+  margin-top: 1px;
+}
+.lodging-btn {
+  background: var(--coral);
+  color: var(--white);
+  text-decoration: none;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+}
+.lodging-btn:hover { background: var(--coral-dark); transform: scale(1.04); }
+
+/* ── NOTICES ── */
+#notices { background: linear-gradient(180deg, #e8f8ff 0%, var(--foam) 100%); }
+.notices-grid {
+  max-width: 860px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+.notice-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: 0 4px 16px rgba(0,119,182,0.08);
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.notice-card.visible { opacity: 1; transform: translateY(0); }
+.notice-icon { font-size: 1.8rem; margin-bottom: 0.5rem; display: block; }
+.notice-title {
+  font-weight: 700; font-size: 0.92rem; color: var(--ocean);
+  margin-bottom: 0.5rem;
+}
+.notice-list { list-style: none; }
+.notice-list li {
+  font-size: 0.82rem; color: var(--text-muted);
+  padding: 3px 0; padding-left: 1.1rem; position: relative;
+  line-height: 1.5;
+}
+.notice-list li::before {
+  content: '›';
+  position: absolute; left: 0;
+  color: var(--mid); font-weight: 700;
+}
+
+/* ── COST ── */
+#costs { background: var(--sand); }
+.costs-wrap { max-width: 760px; margin: 0 auto; }
+.cost-table-wrap {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.cost-table-wrap.visible { opacity: 1; transform: translateY(0); }
+table { width: 100%; border-collapse: collapse; }
+thead tr { background: linear-gradient(135deg, var(--ocean), var(--mid)); }
+thead th {
+  padding: 1rem;
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: left;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+tbody tr { border-bottom: 1px solid var(--foam); transition: background 0.2s; }
+tbody tr:hover { background: #f0fbff; }
+tbody td {
+  padding: 0.85rem 1rem;
+  font-size: 0.85rem;
+  color: var(--text);
+  vertical-align: middle;
+}
+tbody td:first-child { font-weight: 600; }
+tbody td:not(:first-child) { color: var(--text-muted); text-align: right; }
+.total-row { background: linear-gradient(135deg, #fff8f0, #fff3ea) !important; }
+.total-row td { font-weight: 700 !important; color: var(--coral-dark) !important; font-size: 0.95rem !important; }
+.subtotal-row { background: #f0fbff !important; }
+.subtotal-row td { font-weight: 700 !important; color: var(--ocean) !important; }
+.cash-note {
+  background: linear-gradient(135deg, var(--ocean), var(--deep));
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+  display: flex; align-items: flex-start; gap: 0.75rem;
+}
+.cash-note-icon { font-size: 1.5rem; flex-shrink: 0; }
+.cash-note-text { color: var(--foam); font-size: 0.82rem; line-height: 1.6; }
+.cash-note-text strong { color: var(--white); font-size: 0.95rem; display: block; margin-bottom: 2px; }
+
+/* ── RESTAURANTS ── */
+#restaurants { background: linear-gradient(180deg, var(--foam) 0%, var(--sand) 100%); }
+.resto-grid {
+  max-width: 860px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.resto-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s;
+}
+.resto-card.visible { opacity: 1; transform: translateY(0); }
+.resto-card:hover { box-shadow: 0 12px 40px rgba(0,119,182,0.16); }
+.resto-header {
+  background: linear-gradient(135deg, var(--mid), var(--light));
+  padding: 1.25rem;
+  text-align: center;
+}
+.resto-emoji { font-size: 2.5rem; display: block; margin-bottom: 0.25rem; }
+.resto-name { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--deep); font-size: 1rem; }
+.resto-type {
+  display: inline-block;
+  background: rgba(2,62,138,0.12);
+  color: var(--deep);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
+.resto-body { padding: 1rem 1.25rem; }
+.resto-row { display: flex; gap: 0.5rem; margin-bottom: 0.4rem; align-items: flex-start; }
+.resto-row-icon { font-size: 0.85rem; flex-shrink: 0; margin-top: 1px; }
+.resto-row-text { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
+.resto-budget {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  background: #f0fbff;
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ocean);
+  margin-top: 0.5rem;
+}
+
+/* ── CHECKLIST ── */
+#checklist { background: var(--sand); }
+.checklist-grid {
+  max-width: 860px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.check-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem;
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.check-card.visible { opacity: 1; transform: translateY(0); }
+.check-card-header {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 1rem; padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--foam);
+}
+.check-card-icon { font-size: 1.6rem; }
+.check-card-title { font-weight: 700; font-size: 1rem; color: var(--ocean); }
+.check-section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--mid);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0.75rem 0 0.4rem;
+}
+.check-section-title:first-child { margin-top: 0; }
+.check-list { list-style: none; }
+.check-item {
+  display: flex; align-items: flex-start; gap: 0.6rem;
+  padding: 4px 0;
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.4;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 4px 6px;
+  transition: background 0.15s;
+}
+.check-item:hover { background: var(--foam); }
+.check-item input[type=checkbox] {
+  width: 15px; height: 15px; flex-shrink: 0; margin-top: 2px;
+  accent-color: var(--ocean); cursor: pointer;
+}
+.check-item.checked { text-decoration: line-through; color: var(--text-muted); }
+.check-shared {
+  background: linear-gradient(135deg, #fff3ea, #fff8f0);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(244,132,95,0.3);
+}
+.check-shared .check-card-header {
+  border-bottom-color: rgba(244,132,95,0.3);
+}
+.check-shared .check-card-title { color: var(--coral-dark); }
+.check-shared .check-section-title { color: var(--coral); }
+
+/* ── SOUVENIR ── */
+.souvenir-row {
+  max-width: 860px; margin: 2rem auto 0;
+  display: flex; gap: 1rem; flex-wrap: wrap;
+}
+.souvenir-chip {
+  background: var(--white);
+  border-radius: 30px;
+  padding: 0.6rem 1.25rem;
+  display: flex; align-items: center; gap: 0.5rem;
+  box-shadow: 0 2px 12px rgba(0,119,182,0.1);
+  font-size: 0.85rem; font-weight: 600; color: var(--text);
+}
+.souvenir-chip span { font-size: 1.1rem; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--deep);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.footer-sub { color: var(--light); font-size: 0.82rem; margin-bottom: 1.25rem; }
+.footer-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.footer-links a {
+  color: var(--foam);
+  font-size: 0.78rem;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.footer-links a:hover { opacity: 1; }
+.footer-copy { color: var(--light); font-size: 0.72rem; margin-top: 1.25rem; opacity: 0.5; }
+
+/* ── BACK TO TOP ── */
+#backTop {
+  position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 888;
+  width: 44px; height: 44px;
+  background: var(--ocean);
+  color: var(--white);
+  border: none; border-radius: 50%;
+  font-size: 1.2rem; cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,119,182,0.35);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s, transform 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}
+#backTop.show { opacity: 1; pointer-events: all; }
+#backTop:hover { transform: translateY(-3px); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  nav { padding: 0 0.75rem; }
+  .nav-brand { font-size: 0.85rem; }
+  section { padding: 3.5rem 1rem; }
+  .day-header { padding: 1rem; }
+  .day-body { padding: 1rem; }
+  .lodging-strip { flex-wrap: wrap; }
+  thead th:nth-child(3), tbody td:nth-child(3) { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav role="navigation" aria-label="頁面導覽">
+  <div class="nav-brand">🏝️ 帛琉 2026</div>
+  <div class="nav-links">
+    <a href="#itinerary">行程</a>
+    <a href="#notices">注意事項</a>
+    <a href="#costs">費用</a>
+    <a href="#restaurants">餐廳</a>
+    <a href="#checklist">行李</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top" aria-label="頁面標題">
+  <div class="hero-bubbles" aria-hidden="true" id="bubbles"></div>
+  <div class="hero-content">
+    <div class="hero-badge">✈ 2026 · 4 People</div>
+    <h1>帛琉<br>五天四夜</h1>
+    <p class="hero-sub">潛入上帝的水族箱 · 翱翔七十群島</p>
+    <div class="hero-meta">
+      <span class="hero-chip">📅 6月18日–22日</span>
+      <span class="hero-chip">✈️ 中華航空 CI30/CI29</span>
+      <span class="hero-chip">🏝️ 天堂島度假村</span>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">5</span><span class="stat-label">天</span></div>
+      <div class="stat"><span class="stat-num">5</span><span class="stat-label">支潛水</span></div>
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">人同行</span></div>
+      <div class="stat"><span class="stat-num">1</span><span class="stat-label">AOW認證</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave-divider" aria-hidden="true">
+<svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,45 L1440,80 L0,80 Z" fill="#FFF8F0"/>
+</svg>
+</div>
+
+<!-- ITINERARY -->
+<section id="itinerary" aria-label="每日行程">
+  <div class="section-header">
+    <div class="section-tag">Itinerary</div>
+    <h2 class="section-title">每日 <span>行程</span></h2>
+  </div>
+  <div class="days-container">
+
+    <!-- DAY 1 -->
+    <article class="day-card" aria-label="第一天行程">
+      <div class="day-header">
+        <div class="day-number">01</div>
+        <div class="day-info">
+          <div class="day-date">June 18 · Thursday</div>
+          <div class="day-title">抵達帛琉</div>
+        </div>
+        <div class="day-emoji" aria-label="飛機">🛬</div>
+      </div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-time">07:40</div>
+            <div class="timeline-activity">🛫 桃園機場 T1 集合</div>
+            <div class="timeline-desc">建議提前2小時辦理 Stand-by，CI30 中華航空</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">09:40</div>
+            <div class="timeline-activity">✈️ 起飛 TPE → ROR</div>
+            <div class="timeline-desc">飛行時間約 3 小時 55 分，空巴 A321 NEO 經濟艙</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">14:35</div>
+            <div class="timeline-activity">🛬 抵達帛琉 ROR 機場</div>
+            <div class="timeline-desc">入境時出示入境碼（QR Code）及回程機票</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">15:00</div>
+            <div class="timeline-activity">🚐 機場接送至飯店</div>
+            <div class="timeline-desc">車程約20分鐘，費用 $20 USD/人（來回）</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">15:30</div>
+            <div class="timeline-activity">🏨 Check-in · 確認裝備</div>
+            <div class="timeline-desc">入住天堂島度假村，填寫潛水資料，整理行李</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">19:00</div>
+            <div class="timeline-activity">🍽️ 晚餐</div>
+            <div class="timeline-desc">推薦 King Palace 韓式料理，離飯店近</div>
+          </li>
+        </ul>
+        <div class="lodging-strip">
+          <div class="lodging-icon" aria-hidden="true">🏝️</div>
+          <div class="lodging-info">
+            <div class="lodging-name">天堂島度假村 IPRC Palau</div>
+            <div class="lodging-desc">Check-in 15:00 · 距市區5分鐘 · 海景陽台</div>
+          </div>
+          <a href="https://www.iprcpalau.com" target="_blank" class="lodging-btn" aria-label="查看天堂島度假村">查看飯店</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- DAY 2 -->
+    <article class="day-card" aria-label="第二天行程">
+      <div class="day-header" style="background: linear-gradient(135deg, #0096C7, #00B4D8);">
+        <div class="day-number">02</div>
+        <div class="day-info">
+          <div class="day-date">June 19 · Friday</div>
+          <div class="day-title">AOW 課程 — 第一天（第1–3潛）</div>
+        </div>
+        <div class="day-emoji" aria-label="潛水">🤿</div>
+      </div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-time">08:30</div>
+            <div class="timeline-activity">🚐 飯店接駁至碼頭</div>
+            <div class="timeline-desc">記得先向飯店領取出海用浴巾，帶防水袋</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">09:30</div>
+            <div class="timeline-activity">🤿 AOW 第1潛 — 深潛</div>
+            <div class="timeline-desc">PADI 進階課程開始，最大深度 30M</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">11:15</div>
+            <div class="timeline-activity">🤿 AOW 第2潛 — 導航</div>
+            <div class="timeline-desc">水下羅盤導航訓練</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">12:00</div>
+            <div class="timeline-activity">🍱 船上或無人島午餐</div>
+            <div class="timeline-desc">含餐食、熱茶、點心，在大海中享用</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">14:00</div>
+            <div class="timeline-activity">🤿 AOW 第3潛 — 多層深度電腦錶</div>
+            <div class="timeline-desc">熟悉電腦表使用，掌握免減壓極限</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">15:00</div>
+            <div class="timeline-activity">🏨 回飯店梳洗休息</div>
+            <div class="timeline-desc">沖洗裝備，休息養精蓄銳</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">18:30</div>
+            <div class="timeline-activity">🍽️ 晚餐</div>
+            <div class="timeline-desc">推薦 Palm Bay Bistro，無敵海景、當地人推薦</div>
+          </li>
+        </ul>
+        <div class="dive-sites">
+          <div class="dive-sites-label">📍 潛點範圍（依潛導當日安排）</div>
+          <div class="dive-sites-list">Ngemelis 海域 — 藍洞 Blue Hole · 藍角 Blue Corner · 大斷層 Big Drop-off · 德國水道 German Channel</div>
+        </div>
+        <div class="lodging-strip">
+          <div class="lodging-icon" aria-hidden="true">🏝️</div>
+          <div class="lodging-info">
+            <div class="lodging-name">天堂島度假村 IPRC Palau</div>
+            <div class="lodging-desc">第二夜 · 備有戶外淋浴裝備間 · 免費 Wi-Fi</div>
+          </div>
+          <a href="https://www.iprcpalau.com" target="_blank" class="lodging-btn">查看飯店</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- DAY 3 -->
+    <article class="day-card" aria-label="第三天行程">
+      <div class="day-header" style="background: linear-gradient(135deg, #0077B6, #0096C7);">
+        <div class="day-number">03</div>
+        <div class="day-info">
+          <div class="day-date">June 20 · Saturday</div>
+          <div class="day-title">AOW 課程 — 完訓日 🎉（第4–5潛）</div>
+        </div>
+        <div class="day-emoji" aria-label="潛水">🤿</div>
+      </div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-time">08:30</div>
+            <div class="timeline-activity">🚐 飯店接駁至碼頭</div>
+            <div class="timeline-desc">記得先向飯店領取出海用浴巾</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">09:30</div>
+            <div class="timeline-activity">🤿 AOW 第4潛 — 放流</div>
+            <div class="timeline-desc">體驗帛琉著名放流潛水，順流飛翔感</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">11:15</div>
+            <div class="timeline-activity">🤿 AOW 第5潛 — 頂尖浮力（完訓！）</div>
+            <div class="timeline-desc">完成 PADI AOW 全部5支課程潛水 🎉</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">12:00</div>
+            <div class="timeline-activity">🍱 船上或無人島午餐</div>
+            <div class="timeline-desc">慶祝完成 AOW 認證！</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">15:00</div>
+            <div class="timeline-activity">🎉 回飯店 — AOW 認證完成！</div>
+            <div class="timeline-desc">恭喜取得 PADI 進階開放水域潛水員認證</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">18:30</div>
+            <div class="timeline-activity">🍽️ 晚餐</div>
+            <div class="timeline-desc">推薦美人魚餐廳，完訓慶祝！必點椰子蟹、硨磲貝（需提前預約）</div>
+          </li>
+        </ul>
+        <div class="dive-sites">
+          <div class="dive-sites-label">📍 潛點範圍（依潛導當日安排）</div>
+          <div class="dive-sites-list">Ulong 海域 — 玻璃城 Glass City · 烏龍水道 Ulong Channel · 西亞斯角 Siaes Corner · 西亞斯隧道 Siaes Tunnel</div>
+        </div>
+        <div class="lodging-strip">
+          <div class="lodging-icon" aria-hidden="true">🏝️</div>
+          <div class="lodging-info">
+            <div class="lodging-name">天堂島度假村 IPRC Palau</div>
+            <div class="lodging-desc">第三夜 · 海景陽台 · 私人碼頭</div>
+          </div>
+          <a href="https://www.iprcpalau.com" target="_blank" class="lodging-btn">查看飯店</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- DAY 4 -->
+    <article class="day-card" aria-label="第四天行程">
+      <div class="day-header" style="background: linear-gradient(135deg, #023E8A, #0077B6);">
+        <div class="day-number">04</div>
+        <div class="day-info">
+          <div class="day-date">June 21 · Sunday</div>
+          <div class="day-title">LT Dive 浮潛東線</div>
+        </div>
+        <div class="day-emoji" aria-label="浮潛">🐠</div>
+      </div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-time">08:30</div>
+            <div class="timeline-activity">🚐 飯店接駁至碼頭</div>
+            <div class="timeline-desc">記得攜帶水母衣！先向飯店領出海浴巾</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">09:00</div>
+            <div class="timeline-activity">🐠 浮潛東線出發（全日）</div>
+            <div class="timeline-desc">含接送、面鏡/呼吸管/救生衣、餐食。LT Dive 東線經典路線</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">12:00</div>
+            <div class="timeline-activity">🍱 船上午餐</div>
+            <div class="timeline-desc">含餐食、熱茶、點心</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">15:00</div>
+            <div class="timeline-activity">🏨 回飯店梳洗休息</div>
+            <div class="timeline-desc">最後一個出海日，珍惜每一刻</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">18:30</div>
+            <div class="timeline-activity">🍽️ 晚餐</div>
+            <div class="timeline-desc">推薦 Elilai Seaside Dining，帛琉最後一晚日落海景 🌅</div>
+          </li>
+        </ul>
+        <div class="dive-sites">
+          <div class="dive-sites-label">🐠 浮潛東線景點</div>
+          <div class="dive-sites-list">牛奶湖 Milky Way（天然SPA）· 鯊魚城 Shark City · 千貝城 Giant Clam City · 七彩魚世界 Rainbow Reef · 藍色珊瑚礁 / 美人魚水道 Mermaid Channel</div>
+        </div>
+        <div class="lodging-strip">
+          <div class="lodging-icon" aria-hidden="true">🏝️</div>
+          <div class="lodging-info">
+            <div class="lodging-name">天堂島度假村 IPRC Palau</div>
+            <div class="lodging-desc">第四夜（最後一夜）· 整理行李準備隔天退房</div>
+          </div>
+          <a href="https://www.iprcpalau.com" target="_blank" class="lodging-btn">查看飯店</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- DAY 5 -->
+    <article class="day-card" aria-label="第五天行程">
+      <div class="day-header" style="background: linear-gradient(135deg, var(--coral-dark), var(--coral));">
+        <div class="day-number">05</div>
+        <div class="day-info">
+          <div class="day-date">June 22 · Monday</div>
+          <div class="day-title">輕航機 · 賦歸</div>
+        </div>
+        <div class="day-emoji" aria-label="輕航機">✈️</div>
+      </div>
+      <div class="day-body">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-time">09:00</div>
+            <div class="timeline-activity">🧳 整理行李 · 準備退房</div>
+            <div class="timeline-desc">退房時間 11:00，記得檢查所有物品</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">10:30</div>
+            <div class="timeline-activity">💰 前往 Thalassophile 辦公室</div>
+            <div class="timeline-desc">支付輕航機尾款（美金現金），確認登機事宜</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">11:30</div>
+            <div class="timeline-activity">🛩️ Course C 輕航機起飛</div>
+            <div class="timeline-desc">飛行約40分鐘，俯瞰牛奶湖、德國水道、七十群島、海豚灣等</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">12:10</div>
+            <div class="timeline-activity">🍽️ 自由午餐</div>
+            <div class="timeline-desc">最後一餐，推薦 Suriyothai 或 Canoe House</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">13:30</div>
+            <div class="timeline-activity">🛫 前往帛琉機場</div>
+            <div class="timeline-desc">建議提前2小時到達辦理 Stand-by</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">15:35</div>
+            <div class="timeline-activity">✈️ CI29 帛琉起飛</div>
+            <div class="timeline-desc">中華航空，飛行約4小時</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">18:35</div>
+            <div class="timeline-activity">🛬 抵達桃園機場 T1</div>
+            <div class="timeline-desc">回到台灣，帶著滿滿的帛琉記憶 🐟</div>
+          </li>
+        </ul>
+        <div class="warning-box" role="alert">
+          ⚠️ 重複潛水後18小時內禁止搭飛機，第五天早上不安排潛水
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave-divider" aria-hidden="true">
+<svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <path d="M0,30 C480,80 960,0 1440,50 L1440,80 L0,80 Z" fill="#e8f8ff"/>
+</svg>
+</div>
+
+<!-- NOTICES -->
+<section id="notices" aria-label="注意事項">
+  <div class="section-header">
+    <div class="section-tag">Tips</div>
+    <h2 class="section-title">行前 <span>注意事項</span></h2>
+  </div>
+  <div class="notices-grid">
+    <div class="notice-card">
+      <span class="notice-icon" aria-hidden="true">✈️</span>
+      <div class="notice-title">出發前準備</div>
+      <ul class="notice-list">
+        <li>去程 &amp; 回程提前2小時到機場辦 Stand-by</li>
+        <li>入境前72小時至 palautravel.pw 填表取得入境碼（QR Code）</li>
+        <li>入境時須出示入境碼及回程機票</li>
+        <li>護照有效期需在回國後6個月以上</li>
+      </ul>
+    </div>
+    <div class="notice-card">
+      <span class="notice-icon" aria-hidden="true">🧴</span>
+      <div class="notice-title">防曬 · 環保規定</div>
+      <ul class="notice-list">
+        <li>只能使用帛琉認證「Reef Safe / 海洋友善」防曬乳</li>
+        <li>違規使用一般防曬乳罰款 USD $1,000</li>
+        <li>建議穿防曬衣 + 戴帽子物理防曬優先</li>
+        <li>禁止觸碰珊瑚及任何海洋生物</li>
+        <li>禁止追逐、餵食海洋生物</li>
+      </ul>
+    </div>
+    <div class="notice-card">
+      <span class="notice-icon" aria-hidden="true">🤿</span>
+      <div class="notice-title">出海 · 潛水注意</div>
+      <ul class="notice-list">
+        <li>出海前先向飯店領取出海用浴巾</li>
+        <li>船上勿帶貴重物品（錢財、護照）</li>
+        <li>海域活動禁止攜帶手套（帛琉政府規定）</li>
+        <li>重複潛水後18小時、單次潛水後12小時內禁止搭飛機</li>
+        <li>個人潛水 &amp; 旅遊保險請自行投保</li>
+      </ul>
+    </div>
+    <div class="notice-card">
+      <span class="notice-icon" aria-hidden="true">📱</span>
+      <div class="notice-title">eSIM · 通訊</div>
+      <ul class="notice-list">
+        <li>建議出發前在台灣先購買帛琉 eSIM（潛店建議）</li>
+        <li>原因：帛琉電信局下午4點就關，抵達後可能來不及購買</li>
+        <li>建議在台灣蝦皮或線上先購買 eSIM，搭配飯店、餐廳 Wi-Fi 使用</li>
+        <li>帛琉時區比台灣快1小時（UTC+9）</li>
+      </ul>
+    </div>
+    <div class="notice-card">
+      <span class="notice-icon" aria-hidden="true">🚗</span>
+      <div class="notice-title">交通 · 物價</div>
+      <ul class="notice-list">
+        <li>帛琉無大眾運輸（無公車、無捷運、計程車極少）</li>
+        <li>移動靠潛店接送或包車，部分餐廳提供免費接送</li>
+        <li>物價約為台北的 2–3 倍</li>
+        <li>市區僅有 Bank of Guam 及 Bank of Hawaii 兩家銀行</li>
+        <li>機場無換匯，出發前備妥足夠美金現金</li>
+      </ul>
+    </div>
+    <div class="notice-card">
+      <span class="notice-icon" aria-hidden="true">🎒</span>
+      <div class="notice-title">裝備提醒</div>
+      <ul class="notice-list">
+        <li>第四天浮潛自備水母衣（避免曬傷）</li>
+        <li>防水手機袋一定要帶</li>
+        <li>水陸兩用鞋（踩礁石上下船）</li>
+        <li>防水袋（船上空間有限）</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave-divider" aria-hidden="true">
+<svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <path d="M0,50 C360,10 720,80 1080,30 C1260,10 1380,60 1440,40 L1440,80 L0,80 Z" fill="#FFF8F0"/>
+</svg>
+</div>
+
+<!-- COSTS -->
+<section id="costs" aria-label="費用總覽">
+  <div class="section-header">
+    <div class="section-tag">Budget</div>
+    <h2 class="section-title">費用 <span>總覽</span></h2>
+  </div>
+  <div class="costs-wrap">
+    <div class="cost-table-wrap">
+      <table aria-label="費用明細表">
+        <thead>
+          <tr>
+            <th scope="col">項目</th>
+            <th scope="col" style="text-align:right">單價(USD)</th>
+            <th scope="col" style="text-align:right">備註</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>✈️ AOW + 浮潛 總費用</td><td>$1,016</td><td>課程、裝備、小費、出海稅$50</td></tr>
+          <tr><td>🪼 水母湖出海稅補差額</td><td>$50</td><td>升級含水母湖（原已含洛克群島$50）</td></tr>
+          <tr><td>　已預付訂金</td><td style="color:#0077B6 !important">－$508</td><td>已匯款</td></tr>
+          <tr class="subtotal-row"><td>🤿 AOW + 浮潛 現場應付</td><td>$508</td><td>現場美金現金</td></tr>
+          <tr><td>🪼 水母湖出海稅補差額</td><td>$50</td><td>現場美金現金</td></tr>
+          <tr><td>🚐 機場接送（來回）</td><td>$20</td><td>單程 $10</td></tr>
+          <tr><td>🛩️ Thalassa 輕航機</td><td>$290</td><td>現場美金現金，Course C</td></tr>
+          <tr class="subtotal-row"><td>💰 現場總付小計</td><td>$868</td><td>必備金額</td></tr>
+          <tr><td>🍽️ 晚餐（$46 × 4晚）</td><td>~$184</td><td>約 NT$1,500/人/餐</td></tr>
+          <tr><td>💆 按摩 / 小費等</td><td>~$80–100</td><td>依個人消費</td></tr>
+          <tr class="total-row"><td>🏝️ 建議攜帶現金（每人）</td><td>$1,450–1,650</td><td>含緩衝預備金</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cash-note" role="note">
+      <div class="cash-note-icon" aria-hidden="true">💵</div>
+      <div class="cash-note-text">
+        <strong>現金準備建議</strong>
+        現場必付尾款 $868（AOW+浮潛 $508、水母湖補差額 $50、接送 $20、輕航機 $290）+ 額外生活費 $600–800（依個人財力調整）。帛琉機場無換匯，市區僅兩家銀行，信用卡偶有無法使用情況。<strong>建議每人攜帶 $1,450–1,650 USD 現金。</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave-divider" aria-hidden="true">
+<svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <path d="M0,20 C480,70 960,10 1440,55 L1440,80 L0,80 Z" fill="#e8f8ff"/>
+</svg>
+</div>
+
+<!-- RESTAURANTS -->
+<section id="restaurants" aria-label="推薦餐廳與按摩">
+  <div class="section-header">
+    <div class="section-tag">Dining</div>
+    <h2 class="section-title">推薦 <span>餐廳</span></h2>
+  </div>
+  <div class="resto-grid">
+    <!-- 第一晚 -->
+    <article class="resto-card" aria-label="第一晚 King Palace 韓式料理">
+      <div class="resto-header" style="background: linear-gradient(135deg, #0077B6, #00B4D8);">
+        <span class="resto-emoji" aria-hidden="true">🥩</span>
+        <div class="resto-name">King Palace</div>
+        <span class="resto-type">第一晚 · 韓式料理</span>
+      </div>
+      <div class="resto-body">
+        <div class="resto-row"><span class="resto-row-icon">⭐</span><span class="resto-row-text">帛琉好吃韓式料理，抵達首晚暖胃首選</span></div>
+        <div class="resto-row"><span class="resto-row-icon">🚗</span><span class="resto-row-text">離天堂島度假村較近，交通方便</span></div>
+        <div class="resto-row"><span class="resto-row-icon">💡</span><span class="resto-row-text">長途飛行後吃頓好料，補充體力迎接潛水！</span></div>
+        <div class="resto-budget" aria-label="預算 $20–30 美金每人">💰 $20–30 USD/人</div>
+      </div>
+    </article>
+    <!-- 第二晚 -->
+    <article class="resto-card" aria-label="第二晚 Palm Bay Bistro 海景餐廳">
+      <div class="resto-header" style="background: linear-gradient(135deg, #0096C7, #90E0EF);">
+        <span class="resto-emoji" aria-hidden="true">🌅</span>
+        <div class="resto-name">Palm Bay Bistro</div>
+        <span class="resto-type">第二晚 · 無敵海景</span>
+      </div>
+      <div class="resto-body">
+        <div class="resto-row"><span class="resto-row-icon">⭐</span><span class="resto-row-text">無敵海景，當地人大力推薦</span></div>
+        <div class="resto-row"><span class="resto-row-icon">💡</span><span class="resto-row-text">AOW 第一天潛水後犒賞自己，邊看海邊用餐</span></div>
+        <div class="resto-budget" aria-label="預算 $10–20 美金每人">💰 $10–20 USD/人</div>
+      </div>
+    </article>
+    <!-- 第三晚 -->
+    <article class="resto-card" aria-label="第三晚 美人魚餐廳 台灣人經營中餐館">
+      <div class="resto-header" style="background: linear-gradient(135deg, #023E8A, #0077B6);">
+        <span class="resto-emoji" aria-hidden="true">🦀</span>
+        <div class="resto-name">美人魚餐廳</div>
+        <span class="resto-type">第三晚 · 台灣人經營中餐館</span>
+      </div>
+      <div class="resto-body">
+        <div class="resto-row"><span class="resto-row-icon">⭐</span><span class="resto-row-text">帛琉知名台灣人經營中餐館，必吃椰子蟹、硨磲貝</span></div>
+        <div class="resto-row"><span class="resto-row-icon">🪸</span><span class="resto-row-text">椰子蟹 &amp; 硨磲貝為帛琉限定美食，台灣吃不到！</span></div>
+        <div class="resto-row"><span class="resto-row-icon">⚠️</span><span class="resto-row-text">需提前致電店家預約（椰子蟹、硨磲貝須事先訂）</span></div>
+        <div class="resto-row"><span class="resto-row-icon">💡</span><span class="resto-row-text">AOW 完訓慶祝最佳選擇！</span></div>
+        <div class="resto-row"><span class="resto-row-icon">🔗</span><span class="resto-row-text"><a href="https://ltdive.com/palau-on-your-plate-9-must-try-restaurants-2/" target="_blank" rel="noopener" style="color:var(--ocean);">LT Dive 帛琉美食推薦參考</a></span></div>
+      </div>
+    </article>
+    <!-- 第四晚 -->
+    <article class="resto-card" aria-label="第四晚 Elilai Seaside Dining 海景餐廳">
+      <div class="resto-header" style="background: linear-gradient(135deg, var(--coral-dark), var(--coral));">
+        <span class="resto-emoji" aria-hidden="true">🌅</span>
+        <div class="resto-name">Elilai Seaside Dining</div>
+        <span class="resto-type">第四晚 · 精緻海景餐廳</span>
+      </div>
+      <div class="resto-body">
+        <div class="resto-row"><span class="resto-row-icon">📍</span><span class="resto-row-text">Medalaii, Koror，Minatobashi Bridge 北端</span></div>
+        <div class="resto-row"><span class="resto-row-icon">⭐</span><span class="resto-row-text">芝麻煎鮪魚、烤魚、義大利麵；日落海景、氣氛浪漫</span></div>
+        <div class="resto-row"><span class="resto-row-icon">🌅</span><span class="resto-row-text">建議日落前抵達，把握黃金時刻</span></div>
+        <div class="resto-row"><span class="resto-row-icon">💡</span><span class="resto-row-text">帛琉最後一晚，用最美的夕陽收尾 🧡建議提前訂位</span></div>
+        <div class="resto-budget" aria-label="預算 $40–60 美金每人">💰 $40–60 USD/人</div>
+      </div>
+    </article>
+  </div>
+
+  <!-- 按摩 -->
+  <div style="max-width:860px; margin: 2rem auto 0;">
+    <div class="section-header" style="margin-bottom:1rem;">
+      <div class="section-tag">Relax</div>
+      <h3 class="section-title" style="font-size:1.5rem;">按摩 <span>推薦</span></h3>
+    </div>
+    <article class="resto-card" aria-label="Mandara Spa 按摩" style="opacity:1; transform:none;">
+      <div class="resto-header" style="background: linear-gradient(135deg, #023E8A, #0077B6);">
+        <span class="resto-emoji" aria-hidden="true">💆</span>
+        <div class="resto-name">Mandara Spa</div>
+        <span class="resto-type" style="background:rgba(144,224,239,0.2); color:#CAF0F8;">放鬆按摩</span>
+      </div>
+      <div class="resto-body">
+        <div class="resto-row"><span class="resto-row-icon">📍</span><span class="resto-row-text">Palau Royal Resort, Koror，距住宿約 10 分鐘</span></div>
+        <div class="resto-row"><span class="resto-row-icon">⭐</span><span class="resto-row-text">帛琉最知名連鎖SPA，潛水後放鬆肌肉首選</span></div>
+        <div class="resto-row"><span class="resto-row-icon">💡</span><span class="resto-row-text">Palau Pacific Resort 亦有分館，建議提前預約</span></div>
+        <div class="resto-budget" aria-label="預算 $60–100 美金每次">💰 $60–100 USD/次</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave-divider" aria-hidden="true">
+<svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <path d="M0,60 C360,20 720,70 1080,20 C1260,0 1380,50 1440,35 L1440,80 L0,80 Z" fill="#FFF8F0"/>
+</svg>
+</div>
+
+<!-- CHECKLIST -->
+<section id="checklist" aria-label="行李攜帶清單">
+  <div class="section-header">
+    <div class="section-tag">Packing List</div>
+    <h2 class="section-title">攜帶 <span>清單</span></h2>
+  </div>
+  <div class="checklist-grid">
+
+    <!-- 女生 -->
+    <div class="check-card" aria-label="女生行李箱清單">
+      <div class="check-card-header">
+        <span class="check-card-icon" aria-hidden="true">👙</span>
+        <div class="check-card-title">女生 · 行李箱</div>
+      </div>
+      <div class="check-section-title">服裝</div>
+      <ul class="check-list">
+        <li class="check-item"><input type="checkbox" aria-label="泳衣、水母衣"><span>泳衣、水母衣</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="換洗衣服"><span>換洗衣服</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="內衣、襪子、帽子"><span>內衣、襪子、帽子</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="睡衣、飛機頸枕"><span>睡衣、飛機頸枕</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="涼鞋（海邊行走）"><span>涼鞋（海邊行走）</span></li>
+      </ul>
+      <div class="check-section-title">醫藥保健</div>
+      <ul class="check-list">
+        <li class="check-item"><input type="checkbox" aria-label="保健食品"><span>保健食品</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="普拿疼、暈車藥"><span>普拿疼、小兔子暈車藥</span></li>
+      </ul>
+      <div class="check-section-title">盥洗保養</div>
+      <ul class="check-list">
+        <li class="check-item"><input type="checkbox" aria-label="充電器"><span>充電器（電壓與台灣相同）</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="牙刷牙膏牙線耳塞"><span>牙刷、牙膏、牙線、耳塞</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="身體乳液、洗卸產品"><span>身體乳液、洗卸產品</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="棉花棒、護唇膏"><span>棉花棒、護唇膏</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="化妝品"><span>化妝品</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="眼鏡、隱形眼鏡清潔液"><span>眼鏡、隱形眼鏡清潔液</span></li>
+      </ul>
+    </div>
+
+    <!-- 女生隨身 -->
+    <div class="check-card" aria-label="女生隨身行李清單">
+      <div class="check-card-header">
+        <span class="check-card-icon" aria-hidden="true">👜</span>
+        <div class="check-card-title">女生 · 隨身行李</div>
+      </div>
+      <ul class="check-list">
+        <li class="check-item"><input type="checkbox" aria-label="手機、行動電源"><span>手機、行動電源</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="錢包、台幣、美金"><span>錢包、台幣、美金現金</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="護照"><span>護照</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="防曬外套"><span>防曬外套</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="衛生紙、濕紙巾"><span>衛生紙、濕紙巾</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="杯套"><span>杯套</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="口罩、筆"><span>口罩、筆</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="小化妝包"><span>小化妝包</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="太陽眼鏡"><span>太陽眼鏡</span></li>
+      </ul>
+    </div>
+
+    <!-- 男生 -->
+    <div class="check-card" aria-label="男生行李箱清單">
+      <div class="check-card-header">
+        <span class="check-card-icon" aria-hidden="true">🩴</span>
+        <div class="check-card-title">男生 · 行李箱</div>
+      </div>
+      <div class="check-section-title">服裝</div>
+      <ul class="check-list">
+        <li class="check-item"><input type="checkbox" aria-label="泳褲、水母衣"><span>泳褲、水母衣</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="換洗衣服"><span>換洗衣服（T恤、短褲）</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="內褲、襪子、帽子"><span>內褲、襪子、帽子</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="睡衣、睡褲"><span>睡衣 / 睡褲</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="涼鞋"><span>涼鞋（海邊行走）</span></li>
+      </ul>
+      <div class="check-section-title">醫藥保健</div>
+      <ul class="check-list">
+        <li class="check-item"><input type="checkbox" aria-label="保健食品"><span>保健食品</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="普拿疼、暈車藥"><span>普拿疼、暈車藥</span></li>
+      </ul>
+      <div class="check-section-title">盥洗保養</div>
+      <ul class="check-list">
+        <li class="check-item"><input type="checkbox" aria-label="充電器"><span>充電器（電壓與台灣相同）</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="牙刷牙膏牙線耳塞"><span>牙刷、牙膏、牙線、耳塞</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="刮鬍刀"><span>刮鬍刀</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="洗髮乳、沐浴乳"><span>洗髮乳、沐浴乳（飯店有提供）</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="棉花棒、護唇膏"><span>棉花棒、護唇膏</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="眼鏡、隱形眼鏡清潔液"><span>眼鏡、隱形眼鏡清潔液</span></li>
+      </ul>
+    </div>
+
+    <!-- 男生隨身 -->
+    <div class="check-card" aria-label="男生隨身行李清單">
+      <div class="check-card-header">
+        <span class="check-card-icon" aria-hidden="true">🎒</span>
+        <div class="check-card-title">男生 · 隨身行李</div>
+      </div>
+      <ul class="check-list">
+        <li class="check-item"><input type="checkbox" aria-label="手機、行動電源"><span>手機、行動電源</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="錢包、台幣、美金"><span>錢包、台幣、美金現金</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="護照"><span>護照</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="防曬外套"><span>防曬外套 / 薄外套</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="衛生紙、濕紙巾"><span>衛生紙、濕紙巾</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="口罩、筆"><span>口罩、筆</span></li>
+        <li class="check-item"><input type="checkbox" aria-label="太陽眼鏡"><span>太陽眼鏡</span></li>
+      </ul>
+    </div>
+
+    <!-- 共用 -->
+    <div class="check-card check-shared" aria-label="潛水浮潛共用裝備清單" style="grid-column: 1 / -1;">
+      <div class="check-card-header">
+        <span class="check-card-icon" aria-hidden="true">⚠️</span>
+        <div class="check-card-title">潛水 / 浮潛共用（男女皆必備）</div>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 0 2rem;">
+        <ul class="check-list">
+          <li class="check-item"><input type="checkbox" aria-label="Reef Safe防曬乳"><span>🧴 Reef Safe 防曬乳（帛琉認證）</span></li>
+          <li class="check-item"><input type="checkbox" aria-label="水母衣"><span>🩱 水母衣（第4天浮潛必備）</span></li>
+          <li class="check-item"><input type="checkbox" aria-label="水陸兩用鞋"><span>👟 水陸兩用鞋（踩礁石上下船）</span></li>
+        </ul>
+        <ul class="check-list">
+          <li class="check-item"><input type="checkbox" aria-label="防水手機袋"><span>📱 防水手機袋（一定要帶！）</span></li>
+          <li class="check-item"><input type="checkbox" aria-label="防水袋"><span>🎽 防水袋（船上放個人物品）</span></li>
+          <li class="check-item"><input type="checkbox" aria-label="個人常用藥"><span>💊 個人常用藥（暈船藥等）</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Souvenir -->
+  <div class="souvenir-row">
+    <div class="souvenir-chip"><span>🧼</span> 椰子油肥皂 — 最具代表性伴手禮，便宜又實用</div>
+    <div class="souvenir-chip"><span>☕</span> 星巴克帛琉城市杯 — 有在集的必入手</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-logo">🏝️ 帛琉 2026</div>
+  <p class="footer-sub">June 18–22 · 4 人同行 · Koror, Republic of Palau</p>
+  <div class="footer-links">
+    <a href="https://www.iprcpalau.com" target="_blank" rel="noopener" aria-label="天堂島度假村官網">🏨 天堂島度假村</a>
+    <a href="https://palautravel.pw" target="_blank" rel="noopener" aria-label="帛琉入境申請">✈️ 入境申請</a>
+    <a href="https://www.elilaipalau.com" target="_blank" rel="noopener" aria-label="Elilai餐廳官網">🦞 Elilai Restaurant</a>
+  </div>
+  <p class="footer-copy">僅供內部旅遊規劃使用</p>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="backTop" aria-label="回到頂部" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// Bubbles
+(function(){
+  const c = document.getElementById('bubbles');
+  for(let i=0;i<18;i++){
+    const b = document.createElement('div');
+    b.className = 'bubble';
+    const sz = 20+Math.random()*80;
+    b.style.cssText = `width:${sz}px;height:${sz}px;left:${Math.random()*100}%;animation-duration:${8+Math.random()*12}s;animation-delay:${Math.random()*10}s;`;
+    c.appendChild(b);
+  }
+})();
+
+// Intersection Observer for scroll animations
+(function(){
+  const targets = document.querySelectorAll('.day-card, .notice-card, .cost-table-wrap, .resto-card, .check-card');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if(e.isIntersecting){
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(t => obs.observe(t));
+})();
+
+// Stagger delay for grid items
+document.querySelectorAll('.notices-grid .notice-card, .resto-grid .resto-card, .checklist-grid .check-card').forEach((el, i) => {
+  el.style.transitionDelay = (i % 3) * 0.1 + 's';
+});
+
+// Back to top button
+window.addEventListener('scroll', () => {
+  document.getElementById('backTop').classList.toggle('show', window.scrollY > 400);
+});
+
+// Checkbox toggle
+document.querySelectorAll('.check-item').forEach(item => {
+  const cb = item.querySelector('input[type=checkbox]');
+  cb.addEventListener('change', () => {
+    item.classList.toggle('checked', cb.checked);
+  });
+  item.addEventListener('click', e => {
+    if(e.target !== cb){ cb.checked = !cb.checked; item.classList.toggle('checked', cb.checked); }
+  });
+});
+</script>
+</body>
+</html>
